@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.myblogs.mapper.TbClassifyNumberMapper" >
+  <select id="getClassifyNumber" resultType="cn.myblogs.pojo.TbClassifyNumber">
+    SELECT cla.cl_id,cla.cl_category,cla.cl_content,count(a.cl_id)cl_number FROM tb_article as a,tb_classify as cla where a.cl_id=cla.cl_id group by cla.cl_id
+  </select>
+  
+</mapper>
